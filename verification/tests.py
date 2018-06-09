@@ -28,30 +28,7 @@ TESTS = {
 capital_2 = Capital('London')
 capital_3 = Capital('Dubai')''',
                      test="capital_3.name()",
-                     answer="Kyiv"),
-
-        prepare_test(middle_code='''capital_1 = Capital('Moscow')
-capital_2 = Capital('Warsaw')
-capital_3 = Capital('Paris')''',
-                     test="capital_3.name()",
-                     answer="Moscow"),
-
-        prepare_test(middle_code='''capital_1 = Capital('Paris')
-capital_2 = Capital('Sydney')''',
-                     test="capital_2.name()",
-                     answer="Paris"),
-
-        prepare_test(middle_code='''capital_1 = Capital('Tokyo')
-capital_2 = Capital('New-York')
-capital_3 = Capital('Lviv')''',
-                     test="capital_3.name()",
-                     answer="Tokyo"),
-
-        prepare_test(middle_code='''capital_1 = Capital('Washington')
-capital_2 = Capital('Orlando')
-capital_3 = Capital('Denver')''',
-                     test="capital_3.name()",
-                     answer="Washington")
+                     answer="Kyiv")
     ]
 
 }
