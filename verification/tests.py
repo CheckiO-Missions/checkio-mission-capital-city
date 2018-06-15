@@ -1,13 +1,8 @@
 init_code = """
-import inspect
-
 if not "Capital" in USER_GLOBAL:
     raise NotImplementedError("Where is 'Capital'?")
 
 Capital = USER_GLOBAL['Capital']
-
-if not inspect.isclass(Capital):
-    raise Warning('Capital should be a class')
 """
 
 run_test = """
