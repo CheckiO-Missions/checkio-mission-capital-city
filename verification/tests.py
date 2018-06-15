@@ -1,8 +1,13 @@
 init_code = """
+import inspect
+
 if not "Capital" in USER_GLOBAL:
     raise NotImplementedError("Where is 'Capital'?")
 
 Capital = USER_GLOBAL['Capital']
+
+if not inspect.isclass(Capital):
+    raise Warning('Capital should be a class')
 """
 
 run_test = """
@@ -52,6 +57,18 @@ capital_2 = Capital('Orlando')
 capital_3 = Capital('Denver')''',
                      test="capital_3.name()",
                      answer="Washington")
+    ],
+    "Extra test #1": [
+        prepare_test(middle_code='''capital_1 = Capital('Warsaw')
+capital_2 = Capital('Leinberg')''',
+                     test="capital_2 is capital_1",
+                     answer=True)
+    ],
+    "Extra test #2": [
+        prepare_test(middle_code='''capital_1 = Capital('Rome')
+capital_2 = Capital('Marsel')''',
+                     test="capital_2 is capital_1",
+                     answer=True)
     ]
 
 }
